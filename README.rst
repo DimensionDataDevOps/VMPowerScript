@@ -13,28 +13,23 @@ Dependencies
 ============
 The following dependencies will be automatically installed by the shell script:
 
-python
-
-git
-
-pip
-
-didata_cli and its dependencies(these are python modules)
+- python
+- git
+- pip
+- didata_cli and its dependencies(these are python modules)
 
 
 Usage
 =====
 
 To power on VM(s)
-
-```/bin/bash scripts/didata-power.sh -u username -p password --poweron --nodes serverid_1,serverid_2```
+    /bin/bash scripts/didata-power.sh -u username -p password --poweron --nodes serverid_1,serverid_2
 
 To power off VM(s)
-
-```/bin/bash scripts/didata-power.sh -u username -p password --poweroff --nodes serverid_1,serverid_2```
+    /bin/bash scripts/didata-power.sh -u username -p password --poweroff --nodes serverid_1,serverid_2
 
 serverid will look like this
-```9ef6bd45-0d00-4259-a9df-8e396b254dd6```
+    9ef6bd45-0d00-4259-a9df-8e396b254dd6
 
 List of nodes passed into the script should be comma separated.
 
