@@ -14,8 +14,11 @@ Dependencies
 The following dependencies will be automatically installed by the shell script:
 
 python
+
 git
+
 pip
+
 didata_cli and its dependencies(these are python modules)
 
 
