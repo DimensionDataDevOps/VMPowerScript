@@ -25,8 +25,12 @@ Usage
 To power on VM(s)
     /bin/bash scripts/didata-power.sh -u username -p password --poweron --nodes serverid_1,serverid_2
 
+    .. image:: poweron.png
+
 To power off VM(s)
     /bin/bash scripts/didata-power.sh -u username -p password --poweroff --nodes serverid_1,serverid_2
+
+    .. image:: poweroff.png
 
 serverid will look like this ``9ef6bd45-0d00-4259-a9df-8e396b254dd6``
 
