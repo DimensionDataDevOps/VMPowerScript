@@ -34,10 +34,10 @@ case $key in
     shift # past argument
     ;;
     --poweron)
-    power_on=true
+    poweron=true
     ;;
     --poweroff)
-    power_off=true
+    poweroff=true
     ;;
     *)
             # unknown option
@@ -102,7 +102,7 @@ create_serverID_array(){
     IFS=',' read -r -a server_ids <<< "$nodes"
 }
 
-node_power_on(){
+node_poweron(){
     echo "Powering on server(s)"
     for server in "${server_ids[@]}"; do
         echo "Powering on "$server""
@@ -116,7 +116,7 @@ node_power_on(){
     done
 }
 
-node_power_off(){
+node_poweroff(){
     echo "Powering off server(s)"
     for server in "${server_ids[@]}"; do
         echo "Powering off "$server""
@@ -135,12 +135,12 @@ check_variables(){
         echo "Need to specify a -n|--nodes variable (server ID(s) seperated by commas)"
         exit 1
     fi
-    if [[ "$power_on" && "$power_off" ]]; then
-        echo "Need to specify -on|--poweron or -off|--poweroff, not both"
+    if [[ "$poweron" && "$poweroff" ]]; then
+        echo "Need to specify --poweron or --poweroff, not both"
         exit 1
     fi
-    if [[ -z "$power_on" ]] && [[ -z "$power_off" ]]; then
-        echo "Need to specify either -on|--poweron or -off|--poweroff"
+    if [[ -z "$poweron" ]] && [[ -z "$poweroff" ]]; then
+        echo "Need to specify either --poweron or --poweroff"
         exit 1
     fi
     if [ -z "$username" ]; then
@@ -160,18 +160,18 @@ fn_distro
 
 get_didata_script
 if [ -z $didata ]; then
-    echo "DiData not installed, installing all dependencies"
+    echo "didata not installed, installing all dependencies"
     install_dependencies
 fi
 get_didata_script
 if [ ! -e $didata ]; then
-    echo -e "${RED}DiData still not installed something has gone wrong${NC}"
+    echo -e "${RED}didata still not installed something has gone wrong${NC}"
     exit 1
 fi
 
 create_serverID_array
-if [ ! -z $power_on ]; then
-    node_power_on
+if [ ! -z $poweron ]; then
+    node_poweron
 else
-    node_power_off
+    node_poweroff
 fi

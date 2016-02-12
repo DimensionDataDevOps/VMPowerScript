@@ -11,6 +11,8 @@ https://github.com/DimensionDataDevOps/didata_cli
 
 Dependencies
 ============
+Root access is needed for the initial install/run.
+
 The following dependencies will be automatically installed by the shell script:
 
 - python
@@ -21,14 +23,23 @@ The following dependencies will be automatically installed by the shell script:
 
 Usage
 =====
+During the initial run of the script, it will download and install all the required dependencies before preforming the
+desired action.  Subsequent runs of the script will skip this step.
+
 
 To power on VM(s)
     /bin/bash scripts/didata-power.sh -u username -p password --poweron --nodes serverid_1,serverid_2
 
+    .. image:: poweron.png
+
+
+
 To power off VM(s)
     /bin/bash scripts/didata-power.sh -u username -p password --poweroff --nodes serverid_1,serverid_2
 
-serverid will look like this ``9ef6bd45-0d00-4259-a9df-8e396b254dd6``
+    .. image:: poweroff.png
+
+serverid format looks like this ``9ef6bd45-0d00-4259-a9df-8e396b254dd6``
 
 List of nodes passed into the script should be comma separated.
 
