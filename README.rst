@@ -28,8 +28,7 @@ To power on VM(s)
 To power off VM(s)
     /bin/bash scripts/didata-power.sh -u username -p password --poweroff --nodes serverid_1,serverid_2
 
-serverid will look like this
-    9ef6bd45-0d00-4259-a9df-8e396b254dd6
+serverid will look like this ``9ef6bd45-0d00-4259-a9df-8e396b254dd6``
 
 List of nodes passed into the script should be comma separated.
 
